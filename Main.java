@@ -26,8 +26,8 @@ public class Main {
       ),
     };
 
-    for (int i = 0; i < movies.length; i++) {
-      store.setMovie(i, movies[i]);
+    for (Movie movie : movies) {
+      store.addMovie(movie);
     }
 
     printStore();

@@ -1,25 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Store {
 
-    private Movie[] movies;
+  private List<Movie> movies;
 
-    public Store() {
-        this.movies = new Movie[10];
+  public Store() {
+    this.movies = new ArrayList<>();
+  }
+
+  public Movie getMovie(int index) {
+    return new Movie(this.movies.get(index));
+  }
+
+  public void setMovie(int index, Movie movie) {
+    this.movies.set(index, new Movie(movie));
+  }
+
+  public void addMovie(Movie movie) {
+    this.movies.add(movie);
+  }
+
+  public String toString() {
+    String temp = "";
+    for (Movie movie : movies) {
+      temp += movie.toString() + "\n";
     }
-
-    public Movie getMovie(int index) {
-        return new Movie(this.movies[index]);
-    }
-
-    public void setMovie(int index, Movie movie) {
-        this.movies[index] = new Movie(movie);
-    }
-
-    public String toString() {
-        String temp = "";
-        for (Movie movie : movies) {
-            temp += movie.toString() + "\n";
-        }
-        return temp;
-    }
-
+    return temp;
+  }
 }
